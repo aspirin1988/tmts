@@ -63,7 +63,8 @@
                             </li>
                             <li><i class="uk-icon-envelope-o"></i><p><a href="mailto:<?php the_field('email', 5)?>"><?php the_field('email', 5)?></a></p></li>
                         </ul>
-                        <script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=NwePki8ffGTd_58ZoWB3NKWQoaaOH3IQ&width=100%&height=300&lang=en_US&sourceType=constructor"></script>
+                        <?=get_field('map',5)?>
+
                     </div>
                 </section>
             </article>
