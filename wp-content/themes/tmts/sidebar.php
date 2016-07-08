@@ -22,14 +22,14 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	)); ?>
 	<!-- Navigation end -->
 
-	<?php $advertisingItems =  get_posts( array( 'order' => 'ASC', 'posts_per_page' => 3, 'category_name'=> 'advertising' ) ); ?>
+	<?php $advertisingItems =  get_posts( array( 'order' => 'ASC', 'posts_per_page' => 4, 'category_name'=> 'advertising' ) ); ?>
 	<?php foreach($advertisingItems as $key => $value) :?>
 		<?php $advertiseImg = wp_get_attachment_url( get_post_thumbnail_id($value->ID) ); ?>
 		<!-- Advertise article -->
 		<article class="uk-article">
 			<a href="<?=get_permalink($value->ID); ?>"><h1 class="uk-article-title"><?=$value->post_title; ?></h1></a>
 			<div class="article-content-inner uk-clearfix">
-				<img src="<?=$advertiseImg; ?>" alt="" class="uk-hidden-small">
+				<a href="<?=get_permalink($value->ID); ?>"><img src="<?=$advertiseImg; ?>" alt="" class="uk-hidden-small"></a>
 				<div><?=$value->post_excerpt; ?></div>
 			</div>
 		</article><!-- Advertise article end -->

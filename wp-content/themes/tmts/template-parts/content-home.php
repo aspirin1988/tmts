@@ -15,7 +15,7 @@
         <?php foreach(array_reverse($galleryImages) as $key => $val) : ?>
             <?php if($key == 1) : ?>
                 <li>
-                    <img src="<?=$val['path']; ?>" width="" height="" alt="">
+                    <img src="<?=$val['path']; ?>" width="" height="" alt="dd">
                     <div class="uk-overlay-panel uk-overlay-background uk-overlay-fade">
                         <div class="uk-container uk-container-center">
                             <div class="uk-grid">
