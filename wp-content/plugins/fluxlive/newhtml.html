@@ -1,0 +1,641 @@
+<html>
+
+<head>
+
+<title></title>
+<script>
+Setplaceholder = {
+
+imageholder : function () {
+
+
+if (parent.PlugNedit.EditorReadyState){
+var placeholder=parent.PlugNedit.CanvasWindow.getElementById('PNEFluxPluginDir').value+'assets/placeholder.png'
+
+    console.log(placeholder)
+    var image = document.getElementsByTagName('img');
+    for (var i = 0; i < image.length; i++) {
+        image[i].src = placeholder
+    }
+    } else {
+    
+    window.setTimeout(function (){Setplaceholder.imageholder();},1000)
+    
+    }
+
+},
+
+
+SetScoped : function () {
+
+
+if (parent.PlugNedit.EditorReadyState){
+
+
+var placeholder
+   
+
+    var style = document.getElementsByTagName('style');
+    for (var i = 0; i < style.length; i++) {
+        if (style[i].hasAttribute('data-fluxscope') ){
+         placeholder = style[i].getAttribute('data-fluxscope') +"{background-image:url('"+parent.PlugNedit.CanvasWindow.getElementById('PNEFluxPluginDir').value+"assets/"+style[i].id+".jpg');background-size:cover;"
+        style[i].innerHTML =placeholder
+        }
+    }
+    } else {
+    
+    window.setTimeout(function (){Setplaceholder.SetScoped();},1000)
+    
+    }
+
+}
+
+
+
+
+}
+
+</script>
+
+<style>
+
+html,body {
+    background: url(assets/zenbg1.jpg) repeat center center fixed;
+    -webkit-background-size: cover; /* For WebKit*/
+    -moz-background-size: cover;    /* Mozilla*/
+    -o-background-size: cover;      /* Opera*/
+    background-size: cover;         /* Generic*/
+    background-color: #C1C1FF;
+  
+}
+
+
+
+.objectdiv {
+height:80px;width:120px;
+margin:4px;
+font-size:16px;
+font-weight:bolder;
+cursor:pointer;
+}
+
+
+.objectdiv2 {
+height:150px;width:240px;
+margin:4px;
+font-size:14px;
+color:grey;
+cursor:pointer;
+padding:6px;
+text-align:left;
+}
+
+
+table {
+max-width:100%;
+font-size:16px;
+color:grey;
+cursor:pointer;
+border: 1px solid #EEEEEE;
+padding:3px;
+border: 1px solid grey !important;
+}
+
+td {
+padding:5px;
+border : 1px dashed grey;
+}
+
+.gradsetup {
+background-image: linear-gradient(#00005B , #408080); background-color: #00005B;
+}
+
+
+
+.clear {
+clear:both;
+}
+
+</style>
+
+</head>
+
+<body onload="Setplaceholder.imageholder();Setplaceholder.SetScoped(); " >
+<div  >
+
+<div class="clear">
+
+
+<div class="objectdiv"  style="padding:15px;float:left;background-color:white;text-align:center;cursor:pointer" onmousedown="parent.PlugNedit.NewHTMLLayer();"
+ onmouseup="parent.PNETOOLS.StyleInlinediv('color','#000000');parent.PNETOOLS.StyleInlinediv('backgroundColor','#ffffff');parent.PlugNedit.RE('pnenewhtml').style.display='none'"
+
+>
+Blank White Text Area
+</div>
+
+<div class="objectdiv"  style="padding:15px;float:left;background-color:white;text-align:center;cursor:pointer" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';">
+Blank Text Area CSS Settings
+</div>
+
+<div class="objectdiv"  style="padding:15px;float:left;background-color:black;color:white;text-align:center;cursor:pointer"  onmousedown="parent.PlugNedit.NewHTMLLayer();" onmouseup="parent.PNETOOLS.StyleInlinediv('color','#ffffff');parent.PNETOOLS.StyleInlinediv('backgroundColor','#000000');parent.PlugNedit.RE('pnenewhtml').style.display='none';">
+Blank Black Text Area
+</div>
+
+
+<div class="objectdiv" onmousedown="parent.PlugNedit.NewHTMLLayer();" onmouseup="parent.PNETOOLS.StyleInlinediv('color','#000000');parent.PNETOOLS.StyleInlinediv('backgroundColor','transparent');parent.PlugNedit.RE('pnenewhtml').style.display='none';"  style="padding:15px;float:left;background-color:transparent;color:black;text-align:center;">
+<div style="background-color:grey">
+Blank Transparet Text Area
+</div>
+</div>
+
+<div class="objectdiv" onmousedown="parent.PlugNedit.NewHTMLLayer()"  onmouseup="parent.PNETOOLS.StyleInlinediv('color','#000000');parent.PNETOOLS.StyleInlinediv('backgroundColor','#ffffff');parent.PNETOOLS.TransDiv(-30);parent.PlugNedit.RE('pnenewhtml').style.display='none';"   style="padding:15px;float:left;background-color:white;color:black;text-align:center;opacity:.7">
+Transparent White Video / Image Overlay Box
+</div>
+
+<div class="objectdiv" onmousedown="parent.PlugNedit.NewHTMLLayer()"  onmouseup="parent.PNETOOLS.StyleInlinediv('color','#ffffff');parent.PNETOOLS.StyleInlinediv('backgroundColor','#000000');parent.PNETOOLS.TransDiv(-30);parent.PlugNedit.RE('pnenewhtml').style.display='none';"  style="padding:15px;float:left;background-color:black;color:white;text-align:center;opacity:.7">
+Transparent Black Video / Image Overlay Box
+</div>
+
+</div>
+
+<div class="clear">
+
+<div class="objectdiv2"  style="float:left;background-color:white;text-align:center;cursor:pointer" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML">
+<table  cellspacing="1" cellpadding="1" style="max-height:98%;width:100%;border:none;margin:0px auto;margin-top:0%;margin-bottom:0px"><tbody><tr><td colspan="2"><h2>Table Headline</h2></td></tr><tr><td><br>Column 1</td><td><br>Column 2</td></tr></tbody></table>
+</div>
+
+<div class="objectdiv2"  style="float:left;background-color:white;text-align:center;cursor:pointer" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML">
+<table  cellspacing="1" cellpadding="1" style="max-height:98%;width:100%;border:none;margin:0px auto;margin-top:0%;margin-bottom:0px"><tbody><tr><td><h2>Table Headline</h2></td></tr><tr><td><br>Body text.</td></tr></tbody></table>
+</div>
+
+<div class="objectdiv2"  style="float:left;background-color:white;text-align:center;cursor:pointer;width:270px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML;">
+<table  cellspacing="1" cellpadding="1" style="max-height:98%;width:100%;border:none;margin:0px auto;margin-top:0%;margin-bottom:0px"><tbody><tr><td><h1>Table Headline</h1></td></tr><tr><td><br>Body text.</td></tr></tbody></table>
+</div>
+
+<div class="objectdiv2"  style="float:left;background-color:black;text-align:center;cursor:pointer;width:270px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML;parent.PNETOOLS.StyleInlinediv('backgroundColor','#408080')">
+<table  cellspacing="1" cellpadding="1" style="max-height:98%;width:100%;border:none;background-color:white;;margin:0px auto;margin-top:0%;margin-bottom:0px"><tbody><tr><td><h1>Table Headline</h1></td></tr><tr><td><br>White table with option colored background.</td></tr></tbody></table>
+</div>
+
+</div>
+<div class="clear">
+
+<div class="objectdiv2"  style="background-image: linear-gradient(#000040 , #000000); background-color: #000040;float:left;text-align:center;cursor:pointer;width:450px;height:450px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML;parent.PNETOOLS.SetGradient('000040', '000000');parent.PNETOOLS.StyleInlinediv('backgroundColor','#000040');">
+<div style="max-height:98%;max-width:900px;float:left;width:98%;margin:1%;background:none;padding:0px"><div style="width:100%;height:15%;margin:0px;background:none;color:white;padding:0px"><h2 style="padding: 6px;">Headline</h2></div><div style="width:100%;min-height:200px;margin:0px;text-align:justify"><img   src="" style="width: 50%; padding:0px; float: left; margin: 10px;"><span style="color: rgb(255, 255, 255)"><p>Gradient can be changed in the BOX menu under background options! 
+You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.<br>Gradient can be changed in the BOX menu under background options! 
+You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.</p></span></div></div>
+</div>
+<div class="objectdiv2"  style="background-image: linear-gradient(#0080FF , #FB0000); background-color: #0080FF;float:left;text-align:center;cursor:pointer;width:450px;height:450px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML;parent.PNETOOLS.SetGradient('0080FF', 'FB0000');parent.PNETOOLS.StyleInlinediv('backgroundColor','#0080FF');"><div style="max-height:98%;max-width:900px;float:left;width:98%;margin:1%;background:none;padding:0px;background-color:white"><div style="width:100%;height:15%;margin:0px;background:none;padding:0px"><h2 style="padding: 6px;">Headline</h2></div><div style="background-color:#eee;border:1px solid #ccc;padding:5px 10px;text-align:justify;min-height:200px"><img src="" style="width: 50%; padding:0px; float: left; margin: 10px;"><p>Gradient can be changed in the BOX menu under background options! 
+You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.<br>Gradient can be changed in the BOX menu under background options! 
+You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.</p></div></div>
+</div>
+
+
+
+</div>
+
+
+
+<div class="clear">
+
+
+<div class="objectdiv2"  style="background-color:white;float:left;text-align:center;cursor:pointer;width:350px;height:250px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML">
+<div><b>Light Box</b>  Images: Double click image to set, use the Alternate Text input to type caption.</div>
+<div style="position: relative;width: 175px;height: 175px;margin:3%;overflow:hidden;float:left;background-color: lightgrey;border: 1px solid grey;">
+<div style="position: absolute;top: -100%;bottom: -100%;left: -100%;right: -100%;margin: auto;height: 350px;width: 350px;"><img  src="" style="position: absolute;top: -100%;bottom: -100%;left: -100%;right: -100%;margin: auto;min-width: 300px;"  onclick="if (!parent || typeof parent.PlugNedit == 'undefined'){SimplySymphonyAddOns.LightBox(this)}"></div>
+</div>
+</div>
+
+<div class="objectdiv2"  style="background-color:white;float:left;text-align:center;cursor:pointer;width:500px;height:250px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML">
+<div><b>Light Box</b>  Images: Double click image to set, use the Alternate Text input to type caption.</div>
+<div style="position: relative;width: 175px;height: 175px;margin:3%;overflow:hidden;float:left;background-color: lightgrey;border: 1px solid grey;">
+<div style="position: absolute;top: -100%;bottom: -100%;left: -100%;right: -100%;margin: auto;height: 350px;width: 350px;"><img  src="" style="position: absolute;top: -100%;bottom: -100%;left: -100%;right: -100%;margin: auto;min-width: 300px;"  onclick="if (!parent || typeof parent.PlugNedit == 'undefined'){SimplySymphonyAddOns.LightBox(this)}"></div>
+</div>
+
+
+<div style="position: relative;width: 175px;height: 175px;margin:3%;overflow:hidden;float:left;background-color: lightgrey;border: 1px solid grey;">
+<div style="position: absolute;top: -100%;bottom: -100%;left: -100%;right: -100%;margin: auto;height: 350px;width: 350px;"><img  src="" style="position: absolute;top: -100%;bottom: -100%;left: -100%;right: -100%;margin: auto;min-width: 300px;"  onclick="if (!parent || typeof parent.PlugNedit == 'undefined'){SimplySymphonyAddOns.LightBox(this)}"></div>
+</div>
+
+
+
+</div>
+
+<div class="clear">
+<div class="objectdiv2"  style="background-color:white;float:left;text-align:center;cursor:pointer;width:650px;height:250px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML">
+<div><b>Light Box</b> Images: Double click image to set, use the "Alternate Text" input to type caption.</div>
+
+<div style="position: relative;width: 175px;height: 175px;margin:3%;overflow:hidden;float:left;background-color: lightgrey;border: 1px solid grey;">
+<div style="position: absolute;top: -100%;bottom: -100%;left: -100%;right: -100%;margin: auto;height: 350px;width: 350px;"><img  src="" style="position: absolute;top: -100%;bottom: -100%;left: -100%;right: -100%;margin: auto;min-width: 300px;"  onclick="if (!parent || typeof parent.PlugNedit == 'undefined'){SimplySymphonyAddOns.LightBox(this)}"></div>
+</div>
+
+<div style="position: relative;width: 175px;height: 175px;margin:3%;overflow:hidden;float:left;background-color: lightgrey;border: 1px solid grey;">
+<div style="position: absolute;top: -100%;bottom: -100%;left: -100%;right: -100%;margin: auto;height: 350px;width: 350px;"><img  src="" style="position: absolute;top: -100%;bottom: -100%;left: -100%;right: -100%;margin: auto;min-width: 300px;"  onclick="if (!parent || typeof parent.PlugNedit == 'undefined'){SimplySymphonyAddOns.LightBox(this)}"></div>
+</div>
+
+<div style="position: relative;width: 175px;height: 175px;margin:3%;overflow:hidden;float:left;background-color: lightgrey;border: 1px solid grey;">
+<div style="position: absolute;top: -100%;bottom: -100%;left: -100%;right: -100%;margin: auto;height: 350px;width: 350px;"><img  src="" style="position: absolute;top: -100%;bottom: -100%;left: -100%;right: -100%;margin: auto;min-width: 300px;"  onclick="if (!parent || typeof parent.PlugNedit == 'undefined'){SimplySymphonyAddOns.LightBox(this)}"></div>
+</div>
+
+
+</div>
+
+</div>
+<!--
+<div class="clear">
+<div class="objectdiv2"  style="background-color:white;float:left;text-align:center;cursor:pointer;width:650px;height:250px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML">
+<div><b>Light Box</b> Images: Double click image to set, use the Alternate Text input to type caption.</div>
+
+<div style="position: relative;width: 175px;height: 175px;margin:3%;overflow:hidden;float:left;background-color: lightgrey;border: 1px solid grey;">
+<div style="position: absolute;top: -100%;bottom: -100%;left: -100%;right: -100%;margin: auto;height: 350px;width: 350px;"><img  src="" style="position: absolute;top: -100%;bottom: -100%;left: -100%;right: -100%;margin: auto;min-width: 300px;"  onclick="if (!parent || typeof parent.PlugNedit == 'undefined'){SimplySymphonyAddOns.LightBox(this)}"></div>
+</div>
+
+<div style="position: relative;width: 175px;height: 175px;margin:3%;overflow:hidden;float:left;background-color: lightgrey;border: 1px solid grey;">
+<div style="position: absolute;top: -100%;bottom: -100%;left: -100%;right: -100%;margin: auto;height: 350px;width: 350px;"><img  src="" style="position: absolute;top: -100%;bottom: -100%;left: -100%;right: -100%;margin: auto;min-width: 300px;"  onclick="if (!parent || typeof parent.PlugNedit == 'undefined'){SimplySymphonyAddOns.LightBox(this)}"></div>
+</div>
+
+<div style="position: relative;width: 175px;height: 175px;margin:3%;overflow:hidden;float:left;background-color: lightgrey;border: 1px solid grey;">
+<div style="position: absolute;top: -100%;bottom: -100%;left: -100%;right: -100%;margin: auto;height: 350px;width: 350px;"><img  src="" style="position: absolute;top: -100%;bottom: -100%;left: -100%;right: -100%;margin: auto;min-width: 300px;"  onclick="if (!parent || typeof parent.PlugNedit == 'undefined'){SimplySymphonyAddOns.LightBox(this)}"></div>
+</div>
+
+
+</div>
+
+</div>
+
+<div class="clear">
+
+<div class="objectdiv2"  style="background-color:white;float:left;text-align:center;cursor:pointer;width:250px;height:200px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML;parent.PNETOOLS.StyleInlinediv('padding','0px');"><div id="SStriangle1" style="height:100%;max-width:900px;width:100%;margin: 0;background-color:white;padding: 0%;"><style id="scopedtriangle1" data-fluxscope="#SStriangle1" scoped></style><div id="SStriangle1" style="background:none;margin:0%;padding:10%;height:85%;opacity:.9"><div style="padding:5%;background-color:white;border:1px solid black"><p>Use  Enter to insert white space. </p></div></div></div>
+</div>
+
+<div class="objectdiv2"  style="background-color:white;float:left;text-align:center;cursor:pointer;width:250px;height:200px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML;parent.PNETOOLS.StyleInlinediv('padding','0px');"><div id="SStriangle2" style="height:100%;max-width:900px;width:100%;margin: 0;background-color:white;padding: 0%;"><style id="scopedtriangle2" data-fluxscope="#SStriangle2" scoped></style><div id="SStriangle1" style="background:none;margin:0%;padding:10%;height:85%;opacity:.9"><div style="padding:5%;background-color:white;border:1px solid black"><p>Use  Enter to insert white space. </p><br></div></div></div>
+</div>
+
+
+
+<div class="objectdiv2"  style="background-color:white;float:left;text-align:center;cursor:pointer;width:250px;height:200px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML;parent.PNETOOLS.StyleInlinediv('padding','0px');"><div id="SStriangle3" style="height:100%;max-width:900px;width:100%;margin: 0;background-color:white;padding: 0%;"><style id="scopedtriangle3" data-fluxscope="#SStriangle3" scoped></style><div id="SStriangle1" style="background:none;margin:0%;padding:10%;height:85%;opacity:.9"><div style="padding:5%;background-color:white;border:1px solid black"><p>Use Enter to insert white space. </p><br></div></div></div>
+</div>
+
+<div class="objectdiv2"  style="background-color:white;float:left;text-align:center;cursor:pointer;width:250px;height:200px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML;parent.PNETOOLS.StyleInlinediv('padding','0px');"><div id="SStriangle4" style="height:100%;max-width:900px;width:100%;margin: 0;background-color:white;padding: 0%;"><style id="scopedtriangle4" data-fluxscope="#SStriangle4" scoped></style><div id="SStriangle1" style="background:none;margin:0%;padding:10%;height:85%;opacity:.9"><div style="padding:5%;background-color:white;border:1px solid black"><p>Use  Enter to insert white space. </p><br></div></div></div>
+</div>
+
+<div class="objectdiv2"  style="background-color:white;float:left;text-align:center;cursor:pointer;width:250px;height:200px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML;parent.PNETOOLS.StyleInlinediv('padding','0px');"><div id="zenbg1" style="height:100%;max-width:900px;width:100%;margin: 0;background-color:white;padding: 0%;"><style id="scopedzenbg1" data-fluxscope="#zenbg1" scoped></style><div id="SStriangle1" style="background:none;margin:0%;padding:10%;height:85%;opacity:.9"><div style="padding:5%;background-color:white;border:1px solid black"><p>Use  Enter to insert white space. </p><br></div></div></div>
+</div>
+
+</div>
+-->
+<div class="clear">
+
+<div class="objectdiv2"  style="background-color:white;float:left;text-align:center;cursor:pointer;width:250px;height:550px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML">
+<div style="max-height:98%;max-width:900px;float:left;width:98%;margin:1%;background-color:white;padding:0px"><div style="width:100%;height:15%;margin:0px;background-color:#96CBCB;color:white;padding:0px;max-height:75px"><h2 style="padding: 6px;">Headline</h2></div><div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px"><div style="background:#eee;border:1px solid #ccc;padding:5px 10px;text-align: justify;">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.
+</div> </div></div>
+</div>
+
+<div class="objectdiv2"  style="background-color:white;float:left;text-align:center;cursor:pointer;width:250px;height:550px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML">
+<div style="max-height:98%;max-width:900px;float:left;width:98%;margin:1%;background-color:white;padding:0px"><div style="width:100%;height:15%;margin:0px;background-color:#75BAFF;color:white;padding:0px;max-height:75px"><h2 style="padding: 6px;">Headline</h2></div><div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px"><div style="background:#eee;border:1px solid #ccc;padding:5px 10px;text-align: justify;">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.
+</div> </div></div>
+</div>
+
+
+<div class="objectdiv2"  style="background-color:white;float:left;text-align:center;cursor:pointer;width:250px;height:550px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML">
+<div style="max-height:98%;max-width:900px;float:left;width:98%;margin:1%;background-color:white;padding:0px"><div style="width:100%;height:15%;margin:0px;background-color:#CE9D9D;color:white;padding:0px;max-height:75px"><h2 style="padding: 6px;">Headline</h2></div><div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px"><div style="background:#eee;border:1px solid #ccc;padding:5px 10px;text-align: justify;">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.
+</div> </div></div>
+</div>
+
+
+<div class="objectdiv2"  style="background-color:white;float:left;text-align:center;cursor:pointer;width:250px;height:550px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML">
+<div style="max-height:98%;max-width:900px;float:left;width:98%;margin:1%;background-color:white;padding:0px"><div style="width:100%;height:15%;margin:0px;background-color:#FF9B6A;color:white;padding:0px;;max-height:75px"><h2 style="padding: 6px;">Headline</h2></div><div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px"><div style="padding:6px;background:#eee;border:1px solid #ccc;padding:5px 10px;text-align: justify;">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.
+</div> </div></div>
+</div>
+
+</div>
+<div class="clear">
+
+<div class="objectdiv2"  style="background-image: linear-gradient(#00005B , #408080); background-color: #00005B;float:left;text-align:center;cursor:pointer;width:250px;height:550px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML;parent.PNETOOLS.SetGradient('00005B', '408080');parent.PNETOOLS.StyleInlinediv('backgroundColor','#00005B');">
+<div style="max-height:98%;max-width:900px;float:left;width:98%;margin:1%;padding:0px;background:none"><div style="width:100%;height:15%;margin:0px;background:none;color:white;padding:0px;;max-height:75px"><h2 style="padding: 6px;">Headline</h2></div><div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px"><div style="padding:6px;background:#eee;border:1px solid #ccc;padding:5px 10px;text-align: justify;">Gradient can be changed in the BOX menu under background options! 
+You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.
+</div> </div></div>
+</div>
+
+<div class="objectdiv2"  style="background-image: linear-gradient(#804040 , #400040); background-color: maroon;float:left;text-align:center;cursor:pointer;width:250px;height:550px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML;parent.PNETOOLS.SetGradient('804040', '400040');parent.PNETOOLS.StyleInlinediv('backgroundColor','#804040');">
+<div style="max-height:98%;max-width:900px;float:left;width:98%;margin:1%;padding:0px;background:none"><div style="width:100%;height:15%;margin:0px;background:none;color:white;padding:0px;;max-height:75px"><h2 style="padding: 6px;">Headline</h2></div><div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px"><div style="padding:6px;background:#eee;border:1px solid #ccc;padding:5px 10px;text-align: justify;">Gradient can be changed in the BOX menu under background options! 
+You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.
+</div> </div></div>
+</div>
+
+<div class="objectdiv2"  style="background-image: linear-gradient(#408080 , #8080C0); background-color: 408080;float:left;text-align:center;cursor:pointer;width:250px;height:550px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML;parent.PNETOOLS.SetGradient('408080', '8080C0');parent.PNETOOLS.StyleInlinediv('backgroundColor','#408080');">
+<div style="max-height:98%;max-width:900px;float:left;width:98%;margin:1%;padding:0px;background:none"><div style="width:100%;height:15%;margin:0px;background:none;color:white;padding:0px;;max-height:75px"><h2 style="padding: 6px;">Headline</h2></div><div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px"><div style="padding:6px;background:#eee;border:1px solid #ccc;padding:5px 10px;text-align: justify;">Gradient can be changed in the BOX menu under background options! 
+You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.
+</div> </div></div>
+</div>
+
+
+<div class="objectdiv2"  style="background-image: linear-gradient(#E80000 , #FFFF20); background-color: #E80000;float:left;text-align:center;cursor:pointer;width:250px;height:550px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML;parent.PNETOOLS.SetGradient('E80000', 'FFFF20');parent.PNETOOLS.StyleInlinediv('backgroundColor','#E80000');">
+<div style="max-height:98%;max-width:900px;float:left;width:98%;margin:1%;padding:0px;background:none"><div style="width:100%;height:15%;margin:0px;background:none;color:white;padding:0px;;max-height:75px"><h2 style="padding: 6px;">Headline</h2></div><div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px"><div style="padding:6px;background:#eee;border:1px solid #ccc;padding:5px 10px;text-align: justify;">Gradient can be changed in the BOX menu under background options! 
+You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.
+</div> </div></div>
+</div>
+
+
+</div>
+<div class="clear">
+
+
+<div class="objectdiv2"  style="background-image: linear-gradient(#0000F2 , #EC0000); background-color: #0000F2;float:left;text-align:center;cursor:pointer;width:250px;height:550px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML;parent.PNETOOLS.SetGradient('0000F2', 'EC0000');parent.PNETOOLS.StyleInlinediv('backgroundColor','#0000F2');">
+<div style="max-height:98%;max-width:900px;float:left;width:98%;margin:1%;padding:0px;background:none"><div style="width:100%;height:15%;margin:0px;background:none;color:white;padding:0px;;max-height:75px"><h2 style="padding: 6px;">Headline</h2></div><div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px"><div style="padding:6px;background:#eee;border:1px solid #ccc;padding:5px 10px;text-align: justify;">Gradient can be changed in the BOX menu under background options! 
+You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.
+</div> </div></div>
+</div>
+
+<div class="objectdiv2"  style="background-image: linear-gradient(#006400 , #4E3D32); background-color: #006400;float:left;text-align:center;cursor:pointer;width:250px;height:550px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML;parent.PNETOOLS.SetGradient('006400', '4E3D32');parent.PNETOOLS.StyleInlinediv('backgroundColor','#006400');">
+<div style="max-height:98%;max-width:900px;float:left;width:98%;margin:1%;padding:0px;background:none"><div style="width:100%;height:15%;margin:0px;background:none;color:white;padding:0px;;max-height:75px"><h2 style="padding: 6px;">Headline</h2></div><div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px"><div style="padding:6px;background:#eee;border:1px solid #ccc;padding:5px 10px;text-align: justify;">Gradient can be changed in the BOX menu under background options! 
+You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.
+</div> </div></div>
+</div>
+
+<div class="objectdiv2"  style="background-image: linear-gradient(#A3A3D1 , #FF71FF); background-color: #A3A3D1;float:left;text-align:center;cursor:pointer;width:250px;height:550px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML;parent.PNETOOLS.SetGradient('A3A3D1', 'FF71FF');parent.PNETOOLS.StyleInlinediv('backgroundColor','#A3A3D1');">
+<div style="max-height:98%;max-width:900px;float:left;width:98%;margin:1%;padding:0px;background:none"><div style="width:100%;height:15%;margin:0px;background:none;color:white;padding:0px;;max-height:75px"><h2 style="padding: 6px;">Headline</h2></div><div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px"><div style="padding:6px;background:#eee;border:1px solid #ccc;padding:5px 10px;text-align: justify;">Gradient can be changed in the BOX menu under background options! 
+You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.
+</div> </div></div>
+</div>
+<div class="objectdiv2"  style="background-image: linear-gradient(#FF8000 , #000000); background-color: #FF8000;float:left;text-align:center;cursor:pointer;width:250px;height:550px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML;parent.PNETOOLS.SetGradient('FF8000', '000000');parent.PNETOOLS.StyleInlinediv('backgroundColor','#FF8000');">
+<div style="max-height:98%;max-width:900px;float:left;width:98%;margin:1%;padding:0px;background:none"><div style="width:100%;height:15%;margin:0px;background:none;color:white;padding:0px;;max-height:75px"><h2 style="padding: 6px;">Headline</h2></div><div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px"><div style="padding:6px;background:#eee;border:1px solid #ccc;padding:5px 10px;text-align: justify;">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.
+</div> </div></div>
+</div>
+
+</div>
+
+<div class="clear">
+
+<div class="objectdiv2"  style="background-color:white;float:left;text-align:center;cursor:pointer;width:250px;height:500px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML">
+<div style="max-height:98%;max-width:900px;float:left;width:98%;margin:1%;background-color:white;padding:0px"><div style="width:100%;height:15%;margin:0px;background-color:#408080;color:white;padding:0px"><h2 style="padding: 6px;">Headline</h2></div><div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px"><div style="padding:6px">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.
+</div> </div></div>
+</div>
+
+
+<div class="objectdiv2"  style="background-color:white;float:left;text-align:center;cursor:pointer;width:250px;height:500px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML">
+<div style="max-height:98%;max-width:900px;float:left;width:98%;margin:1%;background-color:white;padding:0px"><div style="width:100%;height:15%;margin:0px;background-color:#808040;color:white;padding:0px"><h2 style="padding: 6px;">Headline</h2></div><div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px"><div style="padding:6px">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.
+</div></div></div>
+</div>
+
+<div class="objectdiv2"  style="background-color:white;float:left;text-align:center;cursor:pointer;width:250px;height:500px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML">
+
+<div style="max-height:98%;max-width:900px;float:left;width:98%;margin:1%;background-color:white;padding:0px"><div style="width:100%;height:15%;margin:0px;background-color:maroon;color:white;padding:0px"><h2 style="padding: 6px;">Headline</h2></div><div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px"><div style="padding:6px">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.
+</div> </div></div>
+</div>
+
+<div class="objectdiv2"  style="background-color:white;float:left;text-align:center;cursor:pointer;width:250px;height:500px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML">
+
+<div style="max-height:98%;max-width:900px;float:left;width:98%;margin:1%;background-color:white;padding:0px"><div style="width:100%;height:15%;margin:0px;background-color:#004080;color:white;padding:0px"><h2 style="padding: 6px;">Headline</h2></div><div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px"><div style="padding:6px">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.
+</div></div></div>
+</div>
+
+</div>
+<div class="clear">
+
+
+
+<div class="objectdiv2"  style="background-color:white;float:left;cursor:pointer;width:350px;height:350px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML">
+
+<div style="max-height:98%;max-width:900px;float:left;width:98%;margin:1%;background-color:white;padding:0px"><div style="width:100%;height:15%;margin:0px;background-color:silver;color:white;padding:0px"><h2 style="padding: 6px;">Headline</h2></div><div style="width:100%;min-height:200px;margin:0px"><img   src="" style="width: 35%; padding: 0px; float: left; margin: 10px;"><div style="padding:6px">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.</div></div></div>
+
+</div>
+
+<div class="objectdiv2"  style="background-color:white;float:left;cursor:pointer;width:350px;height:350px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML">
+
+<div style="max-height:98%;max-width:900px;float:left;width:98%;margin:1%;background-color:white;padding:0px"><div style="width:100%;height:15%;margin:0px;background-color:silver;color:white;padding:0px"><h2 style="padding: 6px;">Headline</h2></div><div style="width:100%;min-height:200px;margin:0px"><img   src="" style="width: 50%; padding:0px; float: left; margin: 10px;"><div style="padding:6px">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.</div></div></div>
+
+</div>
+
+</div>
+
+<div class="clear">
+<div style="background-color:#434321;width:100%;font-size:28px;font-weight:bolder;padding:15px;color:white;">
+Floating left objects should be set with a little more width and height for different browser interpretations of when the object should float.
+</div>
+
+<div class="objectdiv2"  style="background-color:white;float:left;text-align:center;cursor:pointer;width:700px;height:600px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML;parent.PNETOOLS.Qupdate(550,'Width',3,0)">
+<div>
+<div style="min-height:250px;max-width:225px;float:left;width:98%;margin:1%;background-color:white;padding:0px;margin-right:10%"><div style="width:100%;height:15%;margin:0px;background-color:#408080;color:white;padding:0px"><h2 style="padding: 6px;">Headline</h2></div><div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px"><div style="padding:6px">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.
+</div></div></div>
+
+<div style="max-height:250px;float:left;max-width:225px;margin:1%;background-color:white;padding:0px"><div style="width:100%;height:15%;margin:0px;background-color:#408080;color:white;padding:0px"><h2 style="padding: 6px;">Headline</h2></div><div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px"><div style="padding:6px">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.
+</div></div></div></div>
+</div>
+
+</div>
+<div class="clear">
+<div class="objectdiv2"  style="background-color:white;float:left;text-align:center;cursor:pointer;width:700px;height:600px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML;parent.PNETOOLS.Qupdate(800,'Width',3,0);">
+<div>
+<div style="min-height:300px;max-width:225px;float:left;width:98%;margin:1%;background-color:white;padding:0px;margin-right:25%"><div style="width:100%;height:15%;margin:0px;background-color:silver;color:white;padding:0px"><h2 style="padding: 6px;">Headline</h2></div><div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px"><div style="padding:6px">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.
+</div></div></div>
+
+<div style="max-height:300px;float:left;max-width:225px;margin:1%;background-color:white;padding:0px"><div style="width:100%;height:15%;margin:0px;background-color:silver;color:white;padding:0px"><h2 style="padding: 6px;">Headline</h2></div><div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px"><div style="padding:6px">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.
+</div></div></div></div>
+</div>
+
+</div>
+<div class="clear">
+
+
+<div class="objectdiv2"  style="background-color:white;float:left;text-align:center;cursor:pointer;width:700px;height:600px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML;parent.PNETOOLS.Qupdate(650,'Width',3,0)">
+<div>
+<div style="min-height:300px;max-width:300px;float:left;width:98%;margin:1%;background-color:white;padding:0px"><div style="width:100%;height:15%;margin:0px;background-color:#CB9898;color:white;padding:0px"><h2 style="padding: 6px;">Headline</h2></div><div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px"><div style="padding:6px">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.
+</div></div></div>
+
+<div style="max-height:300px;float:left;max-width:300px;margin:1%;background-color:white;padding:0px"><div style="width:100%;height:15%;margin:0px;background-color:#8080FF;color:white;padding:0px"><h2 style="padding: 6px;">Headline</h2></div><div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px"><div style="padding:6px">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.
+</div></div></div></div>
+</div>
+
+<div class="objectdiv2"  style="background-color:RGB(199, 199, 141);float:left;text-align:center;cursor:pointer;width:100%;height:300px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML;parent.PNETOOLS.Qupdate(550,'Width',3,0)">
+<div style="max-width:300px;float:left;width:98%;margin-right:15%;padding:0px"><div style="width:100%;height:15%;max-height:100px;margin:0px;padding:0px;color:black;background-color:transparent"><h2 style="padding: 6px;">Simple Background</h2></div><div style="width:100%;min-height:200px;margin:0px;background-color:transparent"><div style="padding:6px">Short Spacing Between. You can set the background, padding, text color of the element, responds to sizing.
+</div></div></div>
+<div style="width:100%;float:left;max-width:300px;padding:0px"><div style="width:100%;height:15%;margin:0px;padding:0px;color:black;background-color:transparent"><h2 style="padding: 6px;">Simple Background</h2></div><div style="width:100%;min-height:200px;margin:0px"><div style="padding:6px;background-color:transparent">Short Spacing Between. You can set the background, padding, text color of the element, responds to sizing. 
+</div></div></div>
+</div>
+
+
+</div>
+<div class="clear">
+
+<div class="objectdiv2"  style="background-color:RGB(199, 199, 141);float:left;text-align:center;cursor:pointer;width:100%;height:300px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML;parent.PNETOOLS.Qupdate(550,'Width',3,0)">
+<div style="max-width:300px;float:left;width:98%;margin-right:25%;padding:0px"><div style="width:100%;height:15%;max-height:100px;margin:0px;padding:0px;color:black;background-color:transparent"><h2 style="padding: 6px;">Simple Background</h2></div><div style="width:100%;min-height:200px;margin:0px"><div style="padding:6px;background-color:transparent">Wide Spacing Between. You can set the background, padding, text color of the element, responds to sizing. 
+</div></div></div>
+<div style="width:100%;float:left;max-width:300px;padding:0px"><div style="width:100%;height:15%;margin:0px;padding:0px;color:black"><h2 style="padding: 6px;">Simple Background</h2></div><div style="width:100%;min-height:200px;margin:0px"><div style="padding:6px;background-color:transparent">Wide Spacing Between. You can set the background, padding, text color of the element, responds to sizing. 
+</div></div></div>
+</div>
+
+</div>
+<div class="clear">
+
+
+<div class="objectdiv2"  style="background-color:RGB(199, 199, 141);float:left;text-align:center;cursor:pointer;width:100%;height:300px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML;parent.PNETOOLS.Qupdate(550,'Width',3,0)">
+
+<div style="max-width:250px;float:left;width:98%;margin-right:10%;padding:0px"><div style="width:100%;height:15%;max-height:100px;margin:0px;padding:0px;color:black;background-color:transparent"><h3 style="padding: 6px;">Simple Background</h2></div><div style="width:100%;min-height:200px;margin:0px"><div style="padding:6px;background-color:transparent">Short Spacing Between.You can set the background, padding, text color of the element, responds to sizing. 
+</div></div></div>
+<div style="max-width:250px;float:left;width:98%;margin-right:10%;padding:0px"><div style="width:100%;height:15%;max-height:100px;margin:0px;padding:0px;color:black;background-color:transparent"><h3 style="padding: 6px;">Simple Background</h2></div><div style="width:100%;min-height:200px;margin:0px"><div style="padding:6px;background-color:transparent">Short Spacing Between.You can set the background, padding, text color of the element, responds to sizing. 
+</div></div></div>
+<div style="width:100%;float:left;max-width:250px;padding:0px"><div style="width:100%;height:15%;margin:0px;padding:0px;color:black"><h3 style="padding: 6px;">Simple Background</h2></div><div style="width:100%;min-height:200px;margin:0px"><div style="padding:6px;background-color:transparent">Short Spacing Between. You can set the background, padding, text color of the element, responds to sizing. 
+</div></div></div>
+</div>
+
+</div>
+
+<div class="clear">
+
+</div>
+<!--
+
+<div class="objectdiv2"  style="background-color:white;float:left;text-align:center;cursor:pointer;width:100%;height:500px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML">
+
+<div style="max-width:250px;float:left;width:98%;margin:1%;background-color:white;padding:0px"><div style="width:100%;height:20%;margin:0px;background-color:silver;color:white;padding:0px"><div style="padding:6px"><h2 style="text-align: center;">3 Column</h2><p><br></p><p><br></p></div></div><div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px"> <div style="padding:6px">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.
+</div></div></div>
+
+
+<div style="max-width:250px;float:left;width:98%;margin:1%;background-color:white;padding:0px"><div style="width:100%;height:20%;margin:0px;background-color:silver;color:white;padding:0px"><div style="padding:6px"><h2 style="text-align: center;">3 Column</h2><p><br></p><p><br></p></div></div><div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px"><div style="padding:6px">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.
+</div></div></div>
+
+
+
+<div style="max-width:250px;float:left;width:98%;margin:1%;background-color:white;padding:0px"><div style="width:100%;height:20%;margin:0px;background-color:silver;color:white;padding:0px"><div style="padding:6px"><h2 style="text-align: center;">3 Column</h2><p><br></p><p><br></p></div></div><div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px"> <div style="padding:6px"> You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.
+</div></div></div>
+</div>
+
+
+
+<div class="objectdiv2"  style="background-color:white;float:left;text-align:center;cursor:pointer;width:98%" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML">
+
+<div style="max-width:250px;float:left;width:94%;margin:3%">
+<div style="width:100%;height:20%;margin:0px"><h2>3 Column</h2></div>
+<div style="width:96%;min-height:200px;margin:0px">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.</div>
+</div>
+<div style="max-width:250px;float:left;width:94%;margin:3%">
+<div style="width:100%;height:20%;margin:0px"><h2>3 Column</h2></div>
+<div style="width:96%;min-height:200px;margin:0px">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed. </div>
+</div>
+<div style="max-width:250px;float:left;width:94%;margin:3%">
+<div style="width:100%;height:20%;margin:0px"><h2> 3 Column</h2></div>
+<div style="width:96%;min-height:200px;margin:0px">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.</div>
+</div>
+</div>
+
+<div class="objectdiv2"  style="background-color:white;float:left;text-align:center;cursor:pointer;width:98%;height:500px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML">
+
+<div style="max-width:300px;float:left;width:98%;margin:1%;background-color:white;padding:0px"><div style="width:100%;height:20%;margin:0px;background-color:#AA3939;color:white;padding:0px"><div style="padding:6px"><h2>2 Column</h2></div></div><div style="width:100%;min-height:200px;margin:0px;padding:0px"><img   src="" style="width:100%;padding-top:20px;padding-bottom:10px"><div style="padding:6px"> You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.
+</div></div></div>
+
+<div style="max-width:300px;float:left;width:98%;margin:1%;background-color:white;padding:0px"><div style="width:100%;height:20%;margin:0px;background-color:#AA3939;color:white;padding:0px"><div style="padding:6px"><h2>2 Column</h2></div></div><div style="width:100%;min-height:200px;margin:0px;padding:0px"><img  src="" style="width:100%;padding-top:20px;padding-bottom:10px"><div style="padding:6px"> You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.
+</div></div></div>
+</div>
+
+<div class="objectdiv2"  style="background-color:white;float:left;text-align:center;cursor:pointer;width:98%;height:500px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML">
+<div style="max-width:300px;float:left;width:98%;margin:1%;background-color:white;padding:0px"><div style="width:100%;height:20%;margin:0px;background-color:#AA3939;color:white;padding:0px"><div style="padding:6px"><h1> 2 Column</h1></div></div><div style="width:100%;min-height:200px;margin:0px;padding:0px"><img   src="" style="width:100%;padding-top:20px;padding-bottom:10px"><div style="background:#eee;border:1px solid #ccc;padding:5px 10px;">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.</div></div></div>
+<div style="max-width:300px;float:left;width:98%;margin:1%;background-color:white;padding:0px"><div style="width:100%;height:20%;margin:0px;background-color:#AA3939;color:white;padding:0px"><div style="padding:6px"><h1> 2 Column</h1></div></div><div style="width:100%;min-height:200px;margin:0px;padding:0px"><img   src="" style="width:100%;padding-top:20px;padding-bottom:10px"><div style="background:#eee;border:1px solid #ccc;padding:5px 10px;">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.</div></div></div>
+</div>
+
+
+
+<div class="objectdiv2"  style="background-color:white;float:left;text-align:center;cursor:pointer;width:98%;height:500px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML">
+
+<div style="max-width:275px;float:left;width:94%;margin:2%;padding:1%">
+<div style="width:98%;height:20%;margin:0px"><h2>2 Column
+</h2></div>
+<div style="width:98%;min-height:200px;margin:0px">
+<img src="" style="width:100%;padding-top:20px;padding-bottom:10px">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed. </div>
+</div>
+<div style="max-width:275px;float:left;width:94%;margin:2%;padding:1%">
+<div style="width:98%;height:20%;margin:0px"><h2>2 Column</h2></div>
+
+<div style="width:98%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed. </div>
+</div>
+
+</div>
+
+<div class="objectdiv2"  style="background-color:navy;float:left;text-align:center;cursor:pointer;width:98%;height:500px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML">
+
+<div style="max-width:250px;float:left;width:94%;margin:2%;background-color:white;padding:1%"><div style="width:98%;height:20%;margin:0px;color:color:black"><h2>2 Column</h2></div><div style="background:#eee;border:1px solid #ccc;padding:5px 10px;"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.</div></div>
+<div style="max-width:250px;float:left;width:94%;margin:2%;background-color:white;padding:1%"><div style="width:98%;height:20%;margin:0px;color:color:black"><h2>2 Column</h2></div><div style="background:#eee;border:1px solid #ccc;padding:5px 10px;"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.</div></div>
+
+</div>
+
+<div class="objectdiv2"  style="background-color:navy;float:left;text-align:center;cursor:pointer;width:98%;height:500px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML">
+<div style="max-width:250px;float:left;width:94%;margin:2%;background-color:white;padding:1%"><div style="width:98%;height:20%;margin:0px;color:color:black"><h2> 3 Column</h2></div><div style="background:#eee;border:1px solid #ccc;padding:5px 10px;"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.</div></div>
+<div style="max-width:250px;float:left;width:94%;margin:2%;background-color:white;padding:1%"><div style="width:98%;height:20%;margin:0px;color:color:black"><h2> 3 Column</h2></div><div style="background:#eee;border:1px solid #ccc;padding:5px 10px;"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.</div></div>
+<div style="max-width:250px;float:left;width:94%;margin:2%;background-color:white;padding:1%"><div style="width:98%;height:20%;margin:0px;color:color:black"><h2> 3 Column</h2></div><div style="background:#eee;border:1px solid #ccc;padding:5px 10px;"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.</div></div>
+</div>
+
+
+
+
+<div class="objectdiv2"  style="background-color:white;float:left;text-align:center;cursor:pointer;width:98%;height:500px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML">
+
+<div style="max-width:250px;float:left;width:94%;margin:3%">
+<div style="width:100%;height:20%;margin:0px"><h2>3 Column</h2></div>
+<div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px">
+You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.</div>
+</div>
+
+<div style="max-width:250px;float:left;width:94%;margin:3%">
+<div style="width:100%;height:20%;margin:0px"><h2>3 Column</h2></div>
+<div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.</div>
+</div>
+
+<div style="max-width:250px;float:left;width:94%;margin:3%">
+<div style="width:100%;height:20%;margin:0px"><h2>3 Column</h2></div>
+<div style="width:100%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.</div>
+</div>
+</div>
+
+
+<div class="objectdiv2"  style="background-color:ltgrey;float:left;text-align:center;cursor:pointer;width:98%;height:500px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML">
+
+<div style="max-width:250px;float:left;width:94%;margin:2%;background-color:white;padding:1%">
+<div style="width:98%;height:20%;margin:0px;color:black"><h2>2 Column</h2></div>
+<div style="width:98%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px">
+You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed. </div>
+</div>
+
+
+<div style="max-width:250px;float:left;width:94%;margin:2%;background-color:white;padding:1%">
+<div style="width:98%;height:20%;margin:0px;color:color:black"><h2>Responsive 2 Column</h2></div>
+<div style="width:98%;min-height:200px;margin:0px;"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px">You can set the background, padding, text color of the element but currently can not change the head and body background also responds to sizing. Double click pictures to update image, PREVIEW may not look correct but the settings do not need changed.</div>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="objectdiv2"  style="background-color:white;float:left;text-align:center;cursor:pointer;width:98%;height:500px" onclick="parent.PlugNedit.NewHTMLLayer();parent.PlugNedit.RE('pnenewhtml').style.display='none';parent.PlugNedit.CurrentLayerObject.HTMLDIV.innerHTML=this.innerHTML">
+
+<div style="max-width:250px;float:left;width:94%;margin:3%;background-color:white">
+<div style="width:96%;height:20%;margin:0px;background-color:#AA3939;color:white"><h2>Responsive 3 Column</h2></div>
+<div style="width:96%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </div>
+</div>
+
+<div style="max-width:250px;float:left;width:94%;margin:3%;background-color:white">
+<div style="width:96%;height:20%;margin:0px;background-color:#582A72;color:white"><h2>Responsive 3 Column</h2></div>
+<div style="width:96%;min-height:200px;margin:0px"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </div>
+</div>
+
+<div style="max-width:250px;float:left;width:94%;margin:3%;background-color:white">
+<div style="width:96%;height:20%;margin:0px;background-color:#2E4372;color:white"><h2>Responsive 3 Column</h2></div>
+<div style="width:96%;min-height:200px;margin:0px;"><img src="" style="width:100%;padding-top:20px;padding-bottom:10px">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</div>
+</div>
+</div>
+
+
+
+
+
+-->
+
+</div>
+
+
+
+</body>
+
+</html>
