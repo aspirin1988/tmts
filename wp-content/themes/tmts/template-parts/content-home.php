@@ -9,7 +9,6 @@
 
 ?>
 <?php $galleryImages = get_gall('slider gallery'); ?>
-
 <div class="uk-slidenav-position" data-uk-slideshow="{autoplay:true}">
     <ul class="uk-slideshow imgBg-nav uk-overlay-active">
         <?php foreach(array_reverse($galleryImages) as $key => $val) : ?>
